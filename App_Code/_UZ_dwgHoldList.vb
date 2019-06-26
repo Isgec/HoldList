@@ -45,6 +45,14 @@ Namespace SIS.DMISG
         Return mRet
       End Get
     End Property
+    ''' <summary>
+    ''' '''
+    ''' </summary>
+    ''' <param name="ProjectID"></param>
+    ''' <param name="DocumentID"></param>
+    ''' <param name="SerialNo"></param>
+    ''' <returns></returns>
+    ''' '==============
     Public Shared Function UZ_dwgHoldListGetByID(ByVal ProjectID As String, ByVal DocumentID As String, ByVal SerialNo As Int32) As SIS.DMISG.dwgHoldList
       Dim Results As SIS.DMISG.dwgHoldList = Nothing
       Using Con As SqlConnection = New SqlConnection(SIS.SYS.SQLDatabase.DBCommon.GetBaaNConnectionString())
@@ -112,11 +120,13 @@ Namespace SIS.DMISG
         .InputReceivedOn = Record.InputReceivedOn
         .PartUnderHold = Record.PartUnderHold
         .ReasonForHold = Record.ReasonForHold
+        .RevisionAtUnhold = Record.RevisionAtUnhold
         .HoldRemovedIssued = Record.HoldRemovedIssued
         .HoldStatus = Record.HoldStatus
         .CreatedBy = Global.System.Web.HttpContext.Current.Session("LoginID")
         .CreatedOn = Now
         .ProjectID = Record.ProjectID
+        .HoldAttribute = Record.HoldAttribute
       End With
       Return SIS.DMISG.dwgHoldList.InsertData(_Rec)
     End Function
@@ -132,8 +142,9 @@ Namespace SIS.DMISG
         CType(.FindControl("F_DateOfIssue"), TextBox).Text = ""
         CType(.FindControl("F_InputReceivedOn"), TextBox).Text = ""
         CType(.FindControl("F_PartUnderHold"), TextBox).Text = ""
-        CType(.FindControl("F_ReasonForHold"), TextBox).Text = ""
-        CType(.FindControl("F_ProjectID"), TextBox).Text = ""
+          CType(.FindControl("F_ReasonForHold"), TextBox).Text = ""
+          CType(.FindControl("F_RevisionAtUnHold"), TextBox).Text = ""
+          CType(.FindControl("F_ProjectID"), TextBox).Text = ""
         CType(.FindControl("F_ProjectID_Display"), Label).Text = ""
         Catch ex As Exception
         End Try

@@ -69,7 +69,7 @@
         </td>--%>
 
         <td class="sis_header">
-          <asp:Image ID="any" runat="server" AlternateText="logo"   ImageAlign="Left" width="700" height="72" ImageUrl="~/DB.jpg" />
+          <asp:Image ID="any" runat="server" AlternateText="logo"   ImageAlign="Left" width="700" height="72" ImageUrl="~/HL.jpg" />
           
         </td>
         <td class="loginTd">
@@ -107,23 +107,34 @@
               <td>
                 <span style="color: #99ccff">Designed &amp; Developed by:</span> <span style="color: #99ffcc">ISGEC Engineering-IT Team</span>
                  </td>
+              
             </tr>
 
             <tr>
               <td>
-                <span style="color: #99ccff">Version : </span> <span style="color: #99ffcc"> DB 1.0.1</span>
+                <span style="color: #99ccff">Version : </span> <span style="color: #99ffcc"> HL 1.0.3</span>
                 <a href="#vinformation" class="btn btn-light btn-outline-light" style="width: 28px;height: 28px; text-align: center; text-justify:auto; cursor: pointer" data-toggle="collapse"><b>i</b></a>
   
-                <a href="#UserGuide" class="btn btn-light btn-outline-primary" style="width: 190px;height: 28px; text-align: center; text-rendering:auto;  text-justify:auto; cursor: pointer" data-toggle="collapse"><b>User Manual</b></a>
-  <div id="UserGuide" class="collapse">
+<%--                <a href="#UserGuide" class="btn btn-light btn-outline-primary" style="width: 190px;height: 28px; text-align: center; text-rendering:auto;  text-justify:auto; cursor: pointer" data-toggle="collapse"><b>User Manual</b></a>--%>
+<%--  <div id="UserGuide" class="collapse">
     
    <embed src="Design_DashBoard-1.0.1-%20User_Manual.pdf" width="1500px" height="2100px" />
-   <%-- <a href="Design_DashBoard-1.0.1-%20User_Manual.pdf">Design_DashBoard-1.0.1- User_Manual.pdf</a>--%>
+   <%-- <a href="Design_DashBoard-1.0.1-%20User_Manual.pdf">Design_DashBoard-1.0.1- User_Manual.pdf</a>
   
-  </div>
+  </div>--%>
 <div id="vinformation" class="collapse">
-  <span style="color: #99ccff">First Release : </span><span style="color: #99ffcc">06/04/2019 </span>
-  
+  <span style="color: #99ccff">First Release : </span><span style="color: #99ffcc">08/05/2019 </span>
+  <hr/>
+   <p><span style="color: #99ccff">HL 1.0 Update 2 : </span><span style="color: #99ffcc">14/06/2019 </span></p>
+  <p> <span style="color: #99ffcc">1. HOLD DashBoard Added  </span> </p>
+   
+   <hr/>
+   
+   <p><span style="color: #99ccff">HL 1.0 Update 3 : </span><span style="color: #99ffcc">26/06/2019 </span></p>
+  <p> <span style="color: #99ffcc">1. HOLD Attribute Added  </span> </p>
+   
+   <hr/>
+
   </div>
 
 

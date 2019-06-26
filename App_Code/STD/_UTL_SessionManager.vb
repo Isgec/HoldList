@@ -68,45 +68,46 @@ Namespace SIS.SYS.Utilities
 
 
 
-        Dim Vdate As DateTime = Now
+        Dim Vdate As String = System.DateTime.Now.ToString("yyyy/MM/dd HH:mm:ss")
 
         Dim Vlogin As String = .Session("LoginID")
 
 
+
         'Using Con As SqlConnection = New SqlConnection(SIS.SYS.SQLDatabase.DBCommon.GetConnectionString())
         '  Con.Open()
         '  Using Cmd As SqlCommand = Con.CreateCommand()
         '    Cmd.CommandType = CommandType.Text
-        '    Cmd.CommandText = "update db_counter set vcount= vcount+1"
+        '    Cmd.CommandText = "update HL_Counter set vcount= vcount+1"
         '    Cmd.ExecuteNonQuery()
         '  End Using
         'End Using
 
 
-        'Using Con As SqlConnection = New SqlConnection(SIS.SYS.SQLDatabase.DBCommon.GetConnectionString())
-        '  Con.Open()
-        '  Using Cmd As SqlCommand = Con.CreateCommand()
-        '    Cmd.CommandType = CommandType.Text
-        '    Cmd.CommandText = "Select Max(VCount) FROM HL_Counter"
-        '    .Session("Visitors") = Cmd.ExecuteScalar
+        Using Con As SqlConnection = New SqlConnection(SIS.SYS.SQLDatabase.DBCommon.GetConnectionString())
+          Con.Open()
+          Using Cmd As SqlCommand = Con.CreateCommand()
+            Cmd.CommandType = CommandType.Text
+            Cmd.CommandText = "Select Max(VCount) FROM HL_Counter"
+            .Session("Visitors") = Cmd.ExecuteScalar
 
-        '  End Using
-        'End Using
-
-
+          End Using
+        End Using
 
 
-        'Dim vcount As Integer = .Session("Visitors") + 1
-        'Using Con As SqlConnection = New SqlConnection(SIS.SYS.SQLDatabase.DBCommon.GetConnectionString())
-        '  Con.Open()
-        '  Using Cmd As SqlCommand = Con.CreateCommand()
-        '    Cmd.CommandType = CommandType.Text
-        '    'Cmd.CommandText = "update db_counter set vcount= vcount+1"
-        '    Cmd.CommandText = "INSERT INTO HL_counter (Vcount,Vdate, Vlogin) VALUES (" & vcount & ",'" & Vdate & "'," & Vlogin & ") "
-        '    Cmd.ExecuteNonQuery()
-        '    .Session("Visitors") = vcount
-        '  End Using
-        'End Using
+
+
+        Dim vcount As Integer = .Session("Visitors") + 1
+        Using Con As SqlConnection = New SqlConnection(SIS.SYS.SQLDatabase.DBCommon.GetConnectionString())
+          Con.Open()
+          Using Cmd As SqlCommand = Con.CreateCommand()
+            Cmd.CommandType = CommandType.Text
+            'Cmd.CommandText = "update db_counter set vcount= vcount+1"
+            Cmd.CommandText = "INSERT INTO HL_counter (Vcount,Vdate, Vlogin) VALUES (" & vcount & ",'" & Vdate & "'," & Vlogin & ") "
+            Cmd.ExecuteNonQuery()
+            .Session("Visitors") = vcount
+          End Using
+        End Using
 
 
 

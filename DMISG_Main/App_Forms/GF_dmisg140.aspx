@@ -1,5 +1,6 @@
 <%@ Page Language="VB" MasterPageFile="~/MasterPage.master" AutoEventWireup="False" CodeFile="GF_dmisg140.aspx.vb" Inherits="GF_dmisg140" title="Maintain List: PMDL" %>
 <asp:Content ID="CPHdmisg140" ContentPlaceHolderID="cph1" Runat="Server">
+  <a class="btn btn-link  btn-outline-info btn-sm" href="/HoldList/Default.aspx" role="button">HOLD LIST DASHBOARD</a>
 <div class="ui-widget-content page">
 <div class="caption">
     <asp:Label ID="Labeldmisg140" runat="server" Text="&nbsp;List: PMDL"></asp:Label>

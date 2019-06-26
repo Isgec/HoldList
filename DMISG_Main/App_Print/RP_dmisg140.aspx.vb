@@ -167,48 +167,63 @@ Partial Class RP_dmisg140
       oColdwgHoldList.CssClass = "colHD"
       oColdwgHoldList.Style.Add("text-align","center")
       oRowdwgHoldList.Cells.Add(oColdwgHoldList)
+
       oColdwgHoldList = New TableCell
       oColdwgHoldList.Text = "Part Under Hold"
       oColdwgHoldList.Font.Bold = True
       oColdwgHoldList.CssClass = "colHD"
       oColdwgHoldList.Style.Add("text-align","left")
       oRowdwgHoldList.Cells.Add(oColdwgHoldList)
+
       oColdwgHoldList = New TableCell
       oColdwgHoldList.Text = "Reason For Hold"
       oColdwgHoldList.Font.Bold = True
       oColdwgHoldList.CssClass = "colHD"
       oColdwgHoldList.Style.Add("text-align","left")
       oRowdwgHoldList.Cells.Add(oColdwgHoldList)
+
+      oColdwgHoldList = New TableCell
+      oColdwgHoldList.Text = "Hold Attributed To"
+      oColdwgHoldList.Font.Bold = True
+      oColdwgHoldList.CssClass = "colHD"
+      oColdwgHoldList.Style.Add("text-align", "left")
+      oRowdwgHoldList.Cells.Add(oColdwgHoldList)
+
       oColdwgHoldList = New TableCell
       oColdwgHoldList.Text = "Hold Removed Issued"
       oColdwgHoldList.Font.Bold = True
       oColdwgHoldList.CssClass = "colHD"
       oColdwgHoldList.Style.Add("text-align","center")
       oRowdwgHoldList.Cells.Add(oColdwgHoldList)
+
       oColdwgHoldList = New TableCell
       oColdwgHoldList.Text = "Revision At Unhold"
       oColdwgHoldList.Font.Bold = True
       oColdwgHoldList.CssClass = "colHD"
       oColdwgHoldList.Style.Add("text-align","left")
       oRowdwgHoldList.Cells.Add(oColdwgHoldList)
+
       oColdwgHoldList = New TableCell
       oColdwgHoldList.Text = "Hold Status"
       oColdwgHoldList.Font.Bold = True
       oColdwgHoldList.CssClass = "colHD"
       oColdwgHoldList.Style.Add("text-align","center")
       oRowdwgHoldList.Cells.Add(oColdwgHoldList)
+
       oColdwgHoldList = New TableCell
       oColdwgHoldList.Text = "Created By"
       oColdwgHoldList.Font.Bold = True
       oColdwgHoldList.CssClass = "colHD"
       oColdwgHoldList.Style.Add("text-align","left")
       oRowdwgHoldList.Cells.Add(oColdwgHoldList)
+
       oColdwgHoldList = New TableCell
       oColdwgHoldList.Text = "Created On"
       oColdwgHoldList.Font.Bold = True
       oColdwgHoldList.CssClass = "colHD"
       oColdwgHoldList.Style.Add("text-align","center")
       oRowdwgHoldList.Cells.Add(oColdwgHoldList)
+
       oTbldwgHoldList.Rows.Add(oRowdwgHoldList)
       For Each odwgHoldList As SIS.DMISG.dwgHoldList In odwgHoldLists
         oRowdwgHoldList = New TableRow
@@ -255,17 +270,26 @@ Partial Class RP_dmisg140
         oColdwgHoldList = New TableCell
         oColdwgHoldList.CssClass = "rowHD"
         oColdwgHoldList.Text = odwgHoldList.PartUnderHold
-      oColdwgHoldList.Style.Add("text-align","left")
+
+        oColdwgHoldList.Style.Add("text-align","left")
         oRowdwgHoldList.Cells.Add(oColdwgHoldList)
         oColdwgHoldList = New TableCell
         oColdwgHoldList.CssClass = "rowHD"
         oColdwgHoldList.Text = odwgHoldList.ReasonForHold
-      oColdwgHoldList.Style.Add("text-align","left")
+
+        oColdwgHoldList.Style.Add("text-align", "left")
+        oRowdwgHoldList.Cells.Add(oColdwgHoldList)
+        oColdwgHoldList = New TableCell
+        oColdwgHoldList.CssClass = "rowHD"
+        oColdwgHoldList.Text = odwgHoldList.HoldAttribute
+
+        oColdwgHoldList.Style.Add("text-align","left")
         oRowdwgHoldList.Cells.Add(oColdwgHoldList)
         oColdwgHoldList = New TableCell
         oColdwgHoldList.CssClass = "rowHD"
         oColdwgHoldList.Text = odwgHoldList.HoldRemovedIssued
-      oColdwgHoldList.Style.Add("text-align","center")
+
+        oColdwgHoldList.Style.Add("text-align","center")
         oRowdwgHoldList.Cells.Add(oColdwgHoldList)
         oColdwgHoldList = New TableCell
         oColdwgHoldList.CssClass = "rowHD"
@@ -274,8 +298,8 @@ Partial Class RP_dmisg140
         oRowdwgHoldList.Cells.Add(oColdwgHoldList)
         oColdwgHoldList = New TableCell
         oColdwgHoldList.CssClass = "rowHD"
-        oColdwgHoldList.Text = IIf(odwgHoldList.HoldStatus, "YES", "NO")
-      oColdwgHoldList.Style.Add("text-align","center")
+        oColdwgHoldList.Text = IIf(odwgHoldList.HoldStatus, "HOLD", "UNHOLD")
+        oColdwgHoldList.Style.Add("text-align","center")
         oRowdwgHoldList.Cells.Add(oColdwgHoldList)
         oColdwgHoldList = New TableCell
         oColdwgHoldList.Text = odwgHoldList.aspnet_users1_UserFullName

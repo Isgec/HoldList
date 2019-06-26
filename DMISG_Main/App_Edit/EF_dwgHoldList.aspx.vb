@@ -68,6 +68,11 @@ Partial Class EF_dwgHoldList
       CType(FVdwgHoldList.FindControl("r_Reason"), HtmlTableRow).Visible = True
       CType(FVdwgHoldList.FindControl("r_Input"), HtmlTableRow).Visible = False
       CType(FVdwgHoldList.FindControl("r_Issue"), HtmlTableRow).Visible = False
+      CType(FVdwgHoldList.FindControl("Tr1"), HtmlTableRow).Visible = True
+      CType(FVdwgHoldList.FindControl("Tr2"), HtmlTableRow).Visible = False
+      CType(FVdwgHoldList.FindControl("r_attrib"), HtmlTableRow).Visible = True
+
+
     Else
       CType(FVdwgHoldList.FindControl("F_HoldStatus"), DropDownList).SelectedValue = "False"
       NewStatus = False
@@ -75,6 +80,10 @@ Partial Class EF_dwgHoldList
       CType(FVdwgHoldList.FindControl("r_Reason"), HtmlTableRow).Visible = False
       CType(FVdwgHoldList.FindControl("r_Input"), HtmlTableRow).Visible = True
       CType(FVdwgHoldList.FindControl("r_Issue"), HtmlTableRow).Visible = True
+      CType(FVdwgHoldList.FindControl("Tr1"), HtmlTableRow).Visible = False
+      CType(FVdwgHoldList.FindControl("Tr2"), HtmlTableRow).Visible = True
+      CType(FVdwgHoldList.FindControl("r_attrib"), HtmlTableRow).Visible = False
+
     End If
     Dim mStr As String = ""
     Dim oTR As IO.StreamReader = New IO.StreamReader(HttpContext.Current.Server.MapPath("~/DMISG_Main/App_Edit") & "/EF_dwgHoldList.js")

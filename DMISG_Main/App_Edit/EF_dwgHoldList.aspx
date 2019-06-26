@@ -92,12 +92,25 @@
             Width="208px"
             runat="server" />
         </td>
+        <tr id="Tr1" runat="server" clientIDMode="Static" visible="false">
         <td class="alignright">
-          <asp:Label ID="L_RevisionAtHold" runat="server" Text="Revision :" />
+          <asp:Label ID="L_RevisionAtHold" runat="server" Text="Revision At Hold:" />
         </td>
         <td>
           <asp:TextBox ID="F_RevisionAtHold"
             Text='<%# Bind("RevisionAtHold") %>'
+            Width="64px"
+            Enabled="false"
+            runat="server" />
+        </td>
+        </tr>
+       <tr id="Tr2" runat="server" clientIDMode="Static" visible="false">
+        <td class="alignright">
+          <asp:Label ID="L_RevisionAtUnHold" runat="server" Text="Revision At UnHold:" />
+        </td>
+        <td>
+          <asp:TextBox ID="F_RevisionAtUnHold"
+            Text='<%# Bind("RevisionAtUnhold") %>'
             Width="64px"
             Enabled="false"
             runat="server" />
@@ -273,6 +286,33 @@
             EnableClientScript = "true"
             ValidationGroup = "dwgHoldList"
             IsValidEmpty = "false"
+            SetFocusOnError="true" />
+        </td>
+      </tr>
+      <tr id="r_attrib" runat="server" clientIDMode="Static">
+        <td class="alignright">
+          <asp:Label ID="Label2" runat="server" Text="Hold Attributed to :" /><span style="color:red">*</span>
+        </td>
+        <td colspan="3">
+          <asp:DropDownList ID="F_HoldAttribute"
+            SelectedValue='<%# Bind("HoldAttribute") %>'
+            Width="200px"
+            CssClass = "mytxt"
+            ValidationGroup="dwgHoldList"
+            runat="server" >
+           <asp:ListItem Selected="True" Value="" Text="----Select----"></asp:ListItem>
+           <asp:ListItem Value="Inter Engineering Input" Text="Inter Engineering Input"></asp:ListItem>
+           <asp:ListItem Value="Client Input" Text="Client Input"></asp:ListItem>
+           <asp:ListItem Value="Vendor Input" Text="Vendor Input"></asp:ListItem>
+          </asp:DropDownList>
+          <asp:RequiredFieldValidator 
+            ID = "RFVHoldAttribute"
+            runat = "server"
+            ControlToValidate = "F_HoldAttribute"
+            ErrorMessage = "<div class='errorLG'>Required!</div>"
+            Display = "Dynamic"
+            EnableClientScript = "true"
+            ValidationGroup = "dwgHoldList"
             SetFocusOnError="true" />
         </td>
       </tr>

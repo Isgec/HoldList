@@ -23,6 +23,7 @@ Namespace SIS.DMISG
     Private _CreatedBy As String = ""
     Private _CreatedOn As String = ""
     Private _ProjectID As String = ""
+    Public Property HoldAttribute As String = ""
     Private _aspnet_Users1_UserFullName As String = ""
     Private _IDM_Projects2_Description As String = ""
     Private _FK_DWG_HoldList_CreatedBy As SIS.QCM.qcmUsers = Nothing
@@ -422,6 +423,7 @@ Namespace SIS.DMISG
         .CreatedBy =  Global.System.Web.HttpContext.Current.Session("LoginID")
         .CreatedOn = Now
         .ProjectID = Record.ProjectID
+        .HoldAttribute = Record.HoldAttribute
       End With
       Return SIS.DMISG.dwgHoldList.InsertData(_Rec)
     End Function
@@ -444,7 +446,8 @@ Namespace SIS.DMISG
           SIS.SYS.SQLDatabase.DBCommon.AddDBParameter(Cmd, "@HoldStatus",SqlDbType.Bit,3, Iif(Record.HoldStatus= "" ,Convert.DBNull, Record.HoldStatus))
           SIS.SYS.SQLDatabase.DBCommon.AddDBParameter(Cmd, "@CreatedBy",SqlDbType.NVarChar,9, Iif(Record.CreatedBy= "" ,Convert.DBNull, Record.CreatedBy))
           SIS.SYS.SQLDatabase.DBCommon.AddDBParameter(Cmd, "@CreatedOn",SqlDbType.DateTime,21, Iif(Record.CreatedOn= "" ,Convert.DBNull, Record.CreatedOn))
-          SIS.SYS.SQLDatabase.DBCommon.AddDBParameter(Cmd, "@ProjectID",SqlDbType.NVarChar,7, Iif(Record.ProjectID= "" ,Convert.DBNull, Record.ProjectID))
+          SIS.SYS.SQLDatabase.DBCommon.AddDBParameter(Cmd, "@ProjectID", SqlDbType.NVarChar, 7, IIf(Record.ProjectID = "", Convert.DBNull, Record.ProjectID))
+          SIS.SYS.SQLDatabase.DBCommon.AddDBParameter(Cmd, "@HoldAttribute", SqlDbType.NVarChar, 50, IIf(Record.HoldAttribute = "", Convert.DBNull, Record.HoldAttribute))
           Cmd.Parameters.Add("@Return_ProjectID", SqlDbType.NVarChar, 7)
           Cmd.Parameters("@Return_ProjectID").Direction = ParameterDirection.Output
           Cmd.Parameters.Add("@Return_DocumentID", SqlDbType.NVarChar, 26)
@@ -477,6 +480,7 @@ Namespace SIS.DMISG
         .HoldStatus = Record.HoldStatus
         .CreatedBy = Global.System.Web.HttpContext.Current.Session("LoginID")
         .CreatedOn = Now
+        .HoldAttribute = Record.HoldAttribute
       End With
       Return SIS.DMISG.dwgHoldList.UpdateData(_Rec)
     End Function
@@ -503,6 +507,7 @@ Namespace SIS.DMISG
           SIS.SYS.SQLDatabase.DBCommon.AddDBParameter(Cmd, "@CreatedBy",SqlDbType.NVarChar,9, Iif(Record.CreatedBy= "" ,Convert.DBNull, Record.CreatedBy))
           SIS.SYS.SQLDatabase.DBCommon.AddDBParameter(Cmd, "@CreatedOn",SqlDbType.DateTime,21, Iif(Record.CreatedOn= "" ,Convert.DBNull, Record.CreatedOn))
           SIS.SYS.SQLDatabase.DBCommon.AddDBParameter(Cmd, "@ProjectID",SqlDbType.NVarChar,7, Iif(Record.ProjectID= "" ,Convert.DBNull, Record.ProjectID))
+          SIS.SYS.SQLDatabase.DBCommon.AddDBParameter(Cmd, "@HoldAttribute", SqlDbType.NVarChar, 50, IIf(Record.HoldAttribute = "", Convert.DBNull, Record.HoldAttribute))
           Cmd.Parameters.Add("@RowCount", SqlDbType.Int)
           Cmd.Parameters("@RowCount").Direction = ParameterDirection.Output
           _RecordCount = -1

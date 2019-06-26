@@ -43,11 +43,11 @@ Partial Class GF_dmisg140
     SetToolBar = TBLdmisg140
   End Sub
   Protected Sub F_t_resp_TextChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles F_t_resp.TextChanged
-    Session("F_t_resp") = F_t_resp.Text
+    Session("F_t_resp") = F_t_resp.Text.ToUpper()
     InitGridPage()
   End Sub
   Protected Sub F_t_cprj_TextChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles F_t_cprj.TextChanged
-    Session("F_t_cprj") = F_t_cprj.Text
+    Session("F_t_cprj") = F_t_cprj.Text.ToUpper()
     InitGridPage()
   End Sub
   Protected Sub Page_Init(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Init

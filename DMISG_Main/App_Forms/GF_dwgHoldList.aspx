@@ -111,6 +111,7 @@
           <ItemStyle CssClass="alignCenter" />
         <HeaderStyle CssClass="alignCenter" Width="50px" />
         </asp:TemplateField>
+
         <asp:TemplateField HeaderText="Revision At Hold" SortExpression="RevisionAtHold">
           <ItemTemplate>
             <asp:Label ID="LabelRevisionAtHold" runat="server" ForeColor='<%# EVal("ForeColor") %>' Text='<%# Bind("RevisionAtHold") %>'></asp:Label>
@@ -118,6 +119,14 @@
           <ItemStyle CssClass="alignCenter" />
         <HeaderStyle CssClass="alignCenter" Width="100px" />
         </asp:TemplateField>
+         <asp:TemplateField HeaderText="Revision At Unhold" SortExpression="RevisionAtUnhold">
+          <ItemTemplate>
+            <asp:Label ID="LabelRevisionAtUnhold" runat="server" ForeColor='<%# EVal("ForeColor") %>' Text='<%# Bind("RevisionAtUnhold") %>'></asp:Label>
+          </ItemTemplate>
+          <ItemStyle CssClass="alignCenter" />
+        <HeaderStyle CssClass="alignCenter" Width="100px" />
+        </asp:TemplateField>
+
         <asp:TemplateField HeaderText="Title" SortExpression="Description">
           <ItemTemplate>
             <asp:Label ID="LabelDescription" runat="server" ForeColor='<%# EVal("ForeColor") %>' Text='<%# Bind("Description") %>'></asp:Label>
